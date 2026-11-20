@@ -1,0 +1,5 @@
+__pycache__/
+runtime/
+data/
+*.sqlite3*
+*.log

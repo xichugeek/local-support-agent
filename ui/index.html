@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>灯屿客服实验台</title><link rel="stylesheet" href="/ui.css"><script src="/ui.js" defer></script></head>
+<body>
+  <div class="shell">
+    <header><div><strong>灯屿客服实验台</strong><span>本地客服 Agent</span></div><p id="model">Qwen3-1.7B · 虚构店铺</p></header>
+    <main>
+      <section class="desk" aria-labelledby="desk-title">
+        <p class="tag">顾客咨询</p>
+        <h1 id="desk-title">说出你遇到的问题</h1>
+        <div class="cases" aria-label="试用问题">
+          <button type="button" data-case="returns">普通退货</button>
+          <button type="button" data-case="shipping">查看发货</button>
+          <button type="button" data-case="exception">损坏与赔偿</button>
+        </div>
+        <form id="ask-form">
+          <label for="question">你的问题</label>
+          <textarea id="question" maxlength="240" rows="2" required placeholder="例如：刚收到的台灯要怎么退？"></textarea>
+          <button type="submit" id="ask" class="primary">发送问题</button>
+        </form>
+        <section id="result" aria-live="polite" hidden>
+          <p id="trace" class="tag"></p><p id="answer"></p>
+          <p id="source"></p>
+          <button id="confirm-handoff" type="button" class="primary" hidden>确认转人工</button>
+          <p id="ticket-receipt"></p>
+        </section>
+      </section>
+      <aside>
+        <section class="drawer" aria-labelledby="kb-title">
+          <p class="tag">回答依据</p><h2 id="kb-title">演示知识库</h2><ul id="knowledge-list"></ul>
+        </section>
+        <section class="drawer" aria-labelledby="ticket-title">
+          <p class="tag">SQLite 本地保存</p><h2 id="ticket-title">人工工单</h2><div id="ticket-list" aria-live="polite"></div>
+        </section>
+      </aside>
+    </main>
+    <footer>西楚极客 · 客服 Agent 搭建教程</footer>
+  </div>
+</body>
+</html>
